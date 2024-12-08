@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paulo Domingos Melo Santos Pereira</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #f9f9f9;
+            color: #333;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: left;
+        }
+        .profile {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .photo {
+            width: auto;
+            height: auto;
+            max-width: 250px;
+            max-height: 250px;
+            margin-right: 20px;
+        }
+        .photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        h1 {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        .info {
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        .info strong {
+            font-weight: bold;
+        }
+        .contact-info {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+        .contact-info p {
+            margin-bottom: 5px;
+        }
+        a {
+            color: #333;
+            text-decoration: none;
+        }
+        .linkedin-posts {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+        .linkedin-posts h2 {
+            font-size: 16px;
+            text-align: left;
+            margin-bottom: 10px;
+        }
+        .linkedin-posts img {
+            width: 45%;
+            max-width: 600px;
+            border-radius: 8px;
+        }
+        .buttons-container {
+            display: flex;
+            flex-direction: column; /* Coloca os botões em coluna */
+            justify-content: flex-start;
+            gap: 20px; /* Espaço entre os botões */
+            align-items: flex-start; /* Alinha os botões à esquerda */
+            margin-left: -10px; /* Ajuste para mover os botões para a esquerda */
+        }
+        .download-button,
+        .linkedin-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #0077B5;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .download-button {
+            background-color: #4CAF50; /* Cor verde para o botão de download */
+        }
+        .download-button:hover {
+            background-color: #45a049; /* Cor mais escura quando passar o mouse */
+        }
+        .linkedin-button:hover {
+            background-color: #005983; /* Cor mais escura quando passar o mouse */
+        }
+        footer {
+            margin-top: 40px;
+            font-size: 14px;
+            text-align: center;
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Seção de foto e informações -->
+    <div class="profile">
+        <div class="photo">
+            <!-- Substitua 'photo.jpg' pelo nome correto do arquivo da sua foto -->
+            <img src="photo.jpg" alt="Paulo Domingos Melo Santos Pereira">
+        </div>
+        <div>
+            <h1>Paulo Domingos Melo Santos Pereira</h1>
+            <p>17 years old | Student of Artificial Intelligence and Data Science | @FCUP/FEUP</p>
+            
+            <!-- Informações principais -->
+            <div class="info">
+                <p><strong>Education:</strong> Currently pursuing a Bachelor's degree in Artificial Intelligence and Data Science at the Faculty of Sciences, University of Porto (since 2024). Completed secondary education at Garcia de Orta High School (2021-2024).</p>
+
+                <p><strong>Experience:</strong> Staff at CLIP Oporto International School (Summer 2024) and participation in a research project at i3S, focusing on Drosophila melanogaster crossings and genetic data analysis.</p>
+
+                <p><strong>Technical Skills:</strong> Proficient in Microsoft Office and basic knowledge of Python programming.</p>
+
+                <p><strong>Soft Skills:</strong> Communication, leadership, and critical thinking.</p>
+
+                <p><strong>Languages:</strong> Native Portuguese and basic English skills.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Informações de contato -->
+    <div class="contact-info">
+        <p><strong>Phone:</strong> <a href="tel:+351910520524">+351 910 520 524</a></p>
+        <p><strong>Email 2:</strong> <a href="mailto:up202406285@edu.fe.up.pt">up202406285@edu.fe.up.pt</a></p>
+        <p><strong>Address:</strong> Rua do Passeio Alegre, 820, Porto</p>
+    </div>
+
+    <!-- LinkedIn Posts Section -->
+    <div class="linkedin-posts">
+        <div>
+            <h2>My Latest LinkedIn Post</h2>
+            <!-- Exemplo de imagem da publicação do LinkedIn -->
+            <img src="linkedin-post1.jpg" alt="LinkedIn post 1">
+        </div>
+        
+        <!-- Container para os botões -->
+        <div class="buttons-container">
+            <!-- Botão para download do CV -->
+            <a href="Paulo_Domingos_Melo_Santos_Pereira_CV.pdf" download class="download-button">Download My CV</a>
+            <!-- Botão para LinkedIn -->
+            <a href="https://www.linkedin.com/in/paulopereira-ai/" target="_blank" class="linkedin-button">See More on LinkedIn</a>
+        </div>
+    </div>
+
+</div>
+
+<!-- Rodapé -->
+<footer>
+    <p>Developed by Paulo Domingos Melo Santos Pereira</p>
+    <p>Currently pursuing a Bachelor's in Artificial Intelligence and Data Science at the University of Porto.</p>
+</footer>
+
+</body>
+</html>
+
