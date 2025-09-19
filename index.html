@@ -1,161 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Paulo Domingos Melo Santos Pereira</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paulo Domingos Melo Santos Pereira</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #0077B5;
+            --secondary-color: #005983;
+            --accent-color: #F7A81B; /* Sugestão de cor complementar */
+            --text-color: #333;
+            --bg-color: #f9f9f9;
+            --card-bg: #fff;
+            --shadow: 0 4px 12px rgba(0,0,0,0.08);
+            --border-radius: 12px;
+        }
 
-  <!-- Fonte moderna -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <!-- Ícones -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
 
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #f9f9f9;
-      color: #333;
-      padding: 20px;
-    }
-    .container { max-width: 850px; margin: 0 auto; padding: 20px; }
-    .profile {
-      display: flex; align-items: center; margin-bottom: 30px; flex-wrap: wrap;
-    }
-    .photo {
-      width: 160px; height: 160px; margin-right: 20px; flex-shrink: 0;
-    }
-    .photo img {
-      width: 100%; height: 100%; object-fit: cover;
-      border-radius: 50%; border: 3px solid #0077B5;
-    }
-    h1 { font-size: 26px; margin-bottom: 8px; color: #0077B5; }
-    h2 { font-size: 20px; margin-bottom: 10px; color: #0077B5; }
-    p { font-size: 15px; margin-bottom: 10px; }
-    .info-section {
-      background: #fff; padding: 18px; margin-bottom: 20px;
-      border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-    }
-    .info-section strong { font-weight: 600; }
-    ul { margin-left: 18px; margin-bottom: 10px; }
-    .contact-info p { margin: 5px 0; }
-    .contact-info a { color: #0077B5; text-decoration: none; }
-    .contact-info i { margin-right: 8px; color: #0077B5; }
-    .linkedin-posts {
-      margin-top: 25px; display: flex; flex-wrap: wrap;
-      gap: 20px; align-items: flex-start;
-    }
-    .linkedin-posts img {
-      width: 100%; max-width: 400px; border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-    }
-    .buttons-container {
-      display: flex; flex-direction: column; gap: 12px; align-items: flex-start;
-    }
-    .download-button, .linkedin-button {
-      display: inline-block; padding: 10px 20px;
-      background-color: #0077B5; color: #fff;
-      text-decoration: none; border-radius: 6px;
-      font-size: 14px; font-weight: bold;
-      transition: background-color 0.3s ease, transform 0.2s ease;
-    }
-    .download-button { background-color: #4CAF50; }
-    .download-button:hover { background-color: #45a049; transform: scale(1.05); }
-    .linkedin-button:hover { background-color: #005983; transform: scale(1.05); }
-    footer {
-      margin-top: 35px; font-size: 14px; text-align: center;
-      border-top: 1px solid #ddd; padding-top: 12px; color: #666;
-    }
-    /* Responsividade */
-    @media (max-width: 768px) {
-      .profile { flex-direction: column; text-align: center; }
-      .photo { margin: 0 0 15px 0; }
-      .linkedin-posts { flex-direction: column; align-items: center; }
-      .buttons-container { align-items: center; }
-    }
-  </style>
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            gap: 30px;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+        
+        .photo img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid var(--primary-color);
+            box-shadow: 0 0 15px rgba(0, 119, 181, 0.4);
+        }
+
+        .header-content h1 {
+            font-size: 2.2rem;
+            margin-bottom: 5px;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        .header-content p {
+            font-size: 1rem;
+            color: #666;
+        }
+        
+        .info-section {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .info-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 5px;
+        }
+        
+        ul { list-style-type: none; margin-left: 0; }
+        li { margin-bottom: 12px; }
+        li strong { font-weight: 700; }
+        
+        .contact-info p { margin: 8px 0; }
+        .contact-info i { margin-right: 10px; color: var(--primary-color); }
+        .contact-info a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .contact-info a:hover { color: var(--secondary-color); text-decoration: underline; }
+
+        .linkedin-section {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .linkedin-post img {
+            width: 100%;
+            max-width: 450px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+        
+        .buttons-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
+            max-width: 300px;
+        }
+        
+        .download-button, .linkedin-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 12px 25px;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+        }
+        
+        .download-button { background-color: var(--accent-color); }
+        .linkedin-button { background-color: var(--primary-color); }
+        
+        .download-button:hover, .linkedin-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        footer {
+            margin-top: 50px;
+            font-size: 0.9rem;
+            text-align: center;
+            border-top: 1px solid #ddd;
+            padding-top: 20px;
+            color: #666;
+        }
+        
+        @media (min-width: 768px) {
+            .header { text-align: left; }
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
 
 <div class="container">
 
-  <!-- Perfil -->
-  <div class="profile">
-    <div class="photo">
-      <img src="photo.jpg" alt="Paulo Domingos Melo Santos Pereira">
+    <header class="header">
+        <div class="photo">
+            <img src="photo.jpg" alt="Paulo Domingos Melo Santos Pereira">
+        </div>
+        <div class="header-content">
+            <h1>Paulo Domingos Melo Santos Pereira</h1>
+            <p>18 years old | Student of Artificial Intelligence and Data Science | @FCUP/FEUP</p>
+        </div>
+    </header>
+
+    <div class="info-section about-me">
+        <h2>About Me</h2>
+        <p>Motivated and curious student with a strong drive to learn and grow. Recognized for creativity and collaborative mindset, I am always seeking opportunities to challenge myself and make a positive impact.</p>
     </div>
-    <div>
-      <h1>Paulo Domingos Melo Santos Pereira</h1>
-      <p>18 years old | Student of Artificial Intelligence and Data Science | @FCUP/FEUP</p>
+
+    <div class="info-section experience">
+        <h2>Professional Experience</h2>
+        <ul>
+            <li><strong>CLIP - Oporto International School</strong>: Staff at Summer Clip 2024 – Technical of Sound and Show Coordination – Summer Clip Shows 2025</li>
+            <li><strong>Grupo Gesticapital</strong>: Management Assistant (Family Business)</li>
+        </ul>
     </div>
-  </div>
 
-  <!-- Sobre Mim -->
-  <div class="info-section">
-    <h2>About Me</h2>
-    <p>Motivated and curious student with a strong drive to learn and grow. Recognized for creativity and collaborative mindset, I am always seeking opportunities to challenge myself and make a positive impact.</p>
-  </div>
-
-  <!-- Experiência Profissional -->
-  <div class="info-section">
-    <h2>Professional Experience</h2>
-    <ul>
-      <li><strong>CLIP - Oporto International School</strong>: Staff at Summer Clip 2024 – Technical of Sound and Show Coordination – Summer Clip Shows 2025</li>
-      <li><strong>Grupo Gesticapital</strong>: Management Assistant (Family Business)</li>
-    </ul>
-  </div>
-
-  <!-- Educação -->
-  <div class="info-section">
-    <h2>Education</h2>
-    <ul>
-      <li><strong>Bachelor’s in Artificial Intelligence and Data Science</strong>, University of Porto (FCUP/FEUP), 2024 - Present</li>
-      <li><strong>High School</strong>, Escola Secundária Garcia de Orta, 2021 - 2024</li>
-    </ul>
-  </div>
-
-  <!-- Skills -->
-  <div class="info-section">
-    <h2>Skills</h2>
-    <p><strong>Technical:</strong> Microsoft Office, Basic Python</p>
-    <p><strong>Soft:</strong> Communication, Leadership, Critical Thinking</p>
-    <p><strong>Languages:</strong> Portuguese (Native), English (Basic)</p>
-  </div>
-
-  <!-- Contactos -->
-  <div class="info-section contact-info">
-    <h2>Contact</h2>
-    <p><i class="fas fa-phone"></i><a href="tel:+351910520524">+351 910 520 524</a></p>
-    <p><i class="fas fa-envelope"></i><a href="mailto:up202406285@edu.fc.up.pt">up202406285@edu.fc.up.pt</a></p>
-    <p><i class="fas fa-envelope"></i><a href="mailto:pp592263@gmail.com">pp592263@gmail.com</a></p>
-    <p><i class="fas fa-map-marker-alt"></i> Rua do Passeio Alegre 820, Foz do Douro, Porto</p>
-  </div>
-
-  <!-- Secção Opcional (menos importante) -->
-  <div class="info-section" style="font-size:14px; color:#555;">
-    <h2>Additional</h2>
-    <p><strong>Volunteer Work:</strong> Missão País (2025 - Present)</p>
-    <p><strong>Projects:</strong> Research Collaboration with i3S & Garcia de Orta (Genetic Data Analysis with <em>Drosophila melanogaster</em>)</p>
-  </div>
-
-  <!-- LinkedIn -->
-  <div class="linkedin-posts">
-    <div>
-      <h2>My Latest LinkedIn Post</h2>
-      <img src="linkedin-post1.jpg" alt="LinkedIn post 1">
+    <div class="info-section education">
+        <h2>Education</h2>
+        <ul>
+            <li><strong>Bachelor’s in Artificial Intelligence and Data Science</strong>, University of Porto (FCUP/FEUP), 2024 - Present</li>
+            <li><strong>High School</strong>, Escola Secundária Garcia de Orta, 2021 - 2024</li>
+        </ul>
     </div>
-    <div class="buttons-container">
-      <a href="Paulo_Domingos_Melo_Santos_Pereira_CV.pdf" download class="download-button">📄 Download My CV</a>
-      <a href="https://www.linkedin.com/in/paulopereira-ai/" target="_blank" class="linkedin-button"><i class="fab fa-linkedin"></i> See More on LinkedIn</a>
-    </div>
-  </div>
 
+    <div class="info-section skills">
+        <h2>Skills</h2>
+        <p><strong>Technical:</strong> Microsoft Office, Basic Python</p>
+        <p><strong>Soft:</strong> Communication, Leadership, Critical Thinking</p>
+        <p><strong>Languages:</strong> Portuguese (Native), English (Basic)</p>
+    </div>
+
+    <div class="info-section contact-info">
+        <h2>Contact</h2>
+        <p><i class="fas fa-phone"></i><a href="tel:+351910520524">+351 910 520 524</a></p>
+        <p><i class="fas fa-envelope"></i><a href="mailto:up202406285@edu.fc.up.pt">up202406285@edu.fc.up.pt</a></p>
+        <p><i class="fas fa-envelope"></i><a href="mailto:pp592263@gmail.com">pp592263@gmail.com</a></p>
+        <p><i class="fas fa-map-marker-alt"></i> Rua do Passeio Alegre 820, Foz do Douro, Porto</p>
+    </div>
+
+    <div class="info-section optional">
+        <h2>Additional</h2>
+        <p><strong>Volunteer Work:</strong> Missão País (2025 - Present)</p>
+        <p><strong>Projects:</strong> Research Collaboration with i3S & Garcia de Orta (Genetic Data Analysis with <em>Drosophila melanogaster</em>)</p>
+    </div>
+    
+    <div class="linkedin-section">
+        <div class="linkedin-post">
+            <h2>My Latest LinkedIn Post</h2>
+            <img src="linkedin-post1.jpg" alt="LinkedIn post 1">
+        </div>
+        <div class="buttons-container">
+            <a href="Paulo_Domingos_Melo_Santos_Pereira_CV.pdf" download class="download-button">
+                <i class="fas fa-download" style="margin-right: 8px;"></i> Download My CV
+            </a>
+            <a href="https://www.linkedin.com/in/paulopereira-ai/" target="_blank" class="linkedin-button">
+                <i class="fab fa-linkedin" style="margin-right: 8px;"></i> See More on LinkedIn
+            </a>
+        </div>
+    </div>
 </div>
 
-<!-- Rodapé -->
 <footer>
-  <p>Developed by Paulo Domingos Melo Santos Pereira</p>
-  <p>Currently pursuing a Bachelor's in Artificial Intelligence and Data Science at the University of Porto.</p>
+    <p>Developed by Paulo Domingos Melo Santos Pereira</p>
+    <p>Currently pursuing a Bachelor's in Artificial Intelligence and Data Science at the University of Porto.</p>
 </footer>
 
 </body>
